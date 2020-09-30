@@ -1,0 +1,11 @@
+from collections import Counter
+
+with open("eng.digits.training_text") as f:
+    content = f.read().replace("\n", "")
+stats = Counter(content)
+
+digits = [str(i) for i in range(10)]
+mean_count = sum(stats[digit] for digit in digits) // len(digits)
+
+additional symbols = "eng.digits.training_text
+print(stats)
