@@ -2,7 +2,7 @@
 echo "/n ****** Finetune one of the fully-trained existing models: ***********"
 
 ##########rm -rf ~/tesstutorial/digits_from_full
-mkdir -p ~/tesstutorial/perimetry_from_full
+mkdir -p ./tesstutorial/perimetry_from_full
 
 combine_tessdata -e ./tessdata_best/eng.traineddata \
   ./tesstutorial/perimetry_from_full/eng.lstm
@@ -10,6 +10,7 @@ combine_tessdata -e ./tessdata_best/eng.traineddata \
 #     ./tesstutorial/perimetry_from_full/eng.lstm
   
   lstmtraining \
+  -U tesstutorial/perimetry/eng/eng.unicharset \
   --max_image_MB 30000 \
   --model_output ./tesstutorial/perimetry_from_full/perimetry_plus \
   --traineddata ./tesstutorial/perimetry/eng/eng.traineddata \
